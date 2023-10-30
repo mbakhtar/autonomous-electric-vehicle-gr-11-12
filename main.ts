@@ -1,9 +1,5 @@
-fwdMotors.setupDriving(
-fwdMotors.leftServo,
-fwdMotors.rightServo,
-0
-)
-basic.forever(function () {
+fwdMotors.setupDriving(fwdMotors.leftServo, fwdMotors.rightServo, 0)
+basic.forever(function on_forever() {
     if (fwdSensors.sonar1.fwdDistancePastThreshold(0.2, fwdSensors.ThresholdDirection.Under)) {
         fwdMotors.stop()
         basic.pause(1000)
@@ -14,4 +10,5 @@ basic.forever(function () {
     } else {
         fwdMotors.drive(fwdMotors.DrivingDirection.Forward, 50)
     }
+    
 })
